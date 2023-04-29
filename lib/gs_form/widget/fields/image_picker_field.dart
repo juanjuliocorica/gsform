@@ -122,12 +122,7 @@ class _GSImagePickerFieldState extends State<GSImagePickerField> {
       compressFormat: ImageCompressFormat.jpg,
       compressQuality: 100,
       uiSettings: [
-        AndroidUiSettings(
-            toolbarTitle: 'ویرایش تصویر',
-            toolbarColor: GSFormColors.white,
-            toolbarWidgetColor: Colors.black,
-            initAspectRatio: CropAspectRatioPreset.original,
-            lockAspectRatio: false),
+        AndroidUiSettings(toolbarTitle: 'Editar imagen', toolbarColor: GSFormColors.white, toolbarWidgetColor: Colors.black, initAspectRatio: CropAspectRatioPreset.original, lockAspectRatio: false),
         IOSUiSettings(
           title: 'Cropper',
         ),
@@ -204,13 +199,7 @@ class ImagePickedView extends StatelessWidget {
   final GSFormStyle formStyle;
   final VoidCallback onDeleteImage;
 
-  ImagePickedView(
-      {required this.croppedFilePath,
-      Key? key,
-      required this.model,
-      required this.formStyle,
-      required this.onDeleteImage})
-      : super(key: key);
+  ImagePickedView({required this.croppedFilePath, Key? key, required this.model, required this.formStyle, required this.onDeleteImage}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -266,7 +255,7 @@ class ImagePickedView extends StatelessWidget {
                             children: [
                               const SizedBox(width: 8),
                               Text(
-                                'حذف',
+                                'Borrar',
                                 maxLines: 1,
                                 style: formStyle.titleTextStyle.copyWith(color: Colors.white),
                               ),
