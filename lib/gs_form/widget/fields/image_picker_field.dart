@@ -120,7 +120,7 @@ class _GSImagePickerFieldState extends State<GSImagePickerField> {
     final croppedFile = await ImageCropper().cropImage(
       sourcePath: image.path,
       compressFormat: ImageCompressFormat.jpg,
-      compressQuality: 100,
+      compressQuality: 50,
       uiSettings: [
         AndroidUiSettings(toolbarTitle: 'Editar imagen', toolbarColor: GSFormColors.white, toolbarWidgetColor: Colors.black, initAspectRatio: CropAspectRatioPreset.original, lockAspectRatio: false),
         IOSUiSettings(
