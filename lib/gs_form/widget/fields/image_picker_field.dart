@@ -124,7 +124,7 @@ class _GSImagePickerFieldState extends State<GSImagePickerField> {
       uiSettings: [
         AndroidUiSettings(toolbarTitle: 'Editar imagen', toolbarColor: GSFormColors.white, toolbarWidgetColor: Colors.black, initAspectRatio: CropAspectRatioPreset.original, lockAspectRatio: false),
         IOSUiSettings(
-          title: 'Cropper',
+          title: 'Editar imagen',
         ),
       ],
     );
