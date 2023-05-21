@@ -14,13 +14,7 @@ class DateDataRangeModel {
   String displayStartDateStr;
   String displayEndDateStr;
 
-  DateDataRangeModel(
-      {required this.startDateServerType,
-      required this.endDateServerType,
-      required this.startTimeStamp,
-      required this.endTimeStamp,
-      required this.displayStartDateStr,
-      required this.displayEndDateStr});
+  DateDataRangeModel({required this.startDateServerType, required this.endDateServerType, required this.startTimeStamp, required this.endTimeStamp, required this.displayStartDateStr, required this.displayEndDateStr});
 }
 
 enum GSDateFormatType {
@@ -28,6 +22,7 @@ enum GSDateFormatType {
   fullText, //  شنبه 04 تیر 1401
   mediumText, // شنبه 04 تیر
   shortText, // 04 تیر ,1401
+  esAr, // dd/MM/yyyy
 }
 
 enum GSCalendarType { jalali, gregorian }
