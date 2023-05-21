@@ -164,8 +164,9 @@ class GSFormUtils {
     final ImagePicker picker = ImagePicker();
     final XFile? image = await picker.pickImage(
       source: imageSource,
-      maxWidth: 400,
-      maxHeight: 400,
+      maxWidth: 2160,
+      maxHeight: 3840,
+      imageQuality: 80,
     );
 
     if (image != null) {
