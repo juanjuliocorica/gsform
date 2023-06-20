@@ -77,10 +77,7 @@ class MainTestPage extends StatelessWidget {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.pushAndRemoveUntil<dynamic>(
-                        context,
-                        MaterialPageRoute<dynamic>(builder: (BuildContext context) => SingleSectionForm()),
-                        (route) => true);
+                    Navigator.pushAndRemoveUntil<dynamic>(context, MaterialPageRoute<dynamic>(builder: (BuildContext context) => SingleSectionForm()), (route) => true);
                   },
                   child: const Text('Single Section form'),
                 ),
@@ -128,8 +125,8 @@ class SingleSectionForm extends StatelessWidget {
                         maxLength: 5,
                         showCounter: false,
                         required: true,
-                        prefixWidget: Text('دقیقه'),
-                        postfixWidget: Text('ثانیه'),
+                        prefixWidget: const Text('دقیقه'),
+                        postfixWidget: const Text('ثانیه'),
                       ),
                       GSField.imagePicker(
                         tag: 'image',
