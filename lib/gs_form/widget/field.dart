@@ -38,7 +38,7 @@ import 'package:gsform/gs_form/widget/fields/mobile_field.dart';
 import 'package:gsform/gs_form/widget/fields/number_field.dart';
 import 'package:gsform/gs_form/widget/fields/password_field.dart';
 import 'package:gsform/gs_form/widget/fields/price_field.dart';
-import 'package:gsform/gs_form/widget/fields/qr_scanner_field.dart';
+// import 'package:gsform/gs_form/widget/fields/qr_scanner_field.dart';
 import 'package:gsform/gs_form/widget/fields/radio_group_field.dart';
 import 'package:gsform/gs_form/widget/fields/spinner_field.dart';
 import 'package:gsform/gs_form/widget/fields/text_field.dart';
@@ -337,25 +337,7 @@ class GSField extends StatefulWidget {
         requiredCheckListEnum: requiredCheckListEnum);
   }
 
-  GSField.text(
-      {Key? key,
-      required String tag,
-      String? title,
-      String? errorMessage,
-      String? helpMessage,
-      Widget? prefixWidget,
-      Widget? postfixWidget,
-      bool? required,
-      bool? showTitle,
-      GSFieldStatusEnum? status,
-      String? value,
-      int? weight,
-      RegExp? validateRegEx,
-      int? maxLength,
-      int? minLine,
-      int? maxLine,
-      String? hint})
-      : super(key: key) {
+  GSField.text({Key? key, required String tag, String? title, String? errorMessage, String? helpMessage, Widget? prefixWidget, Widget? postfixWidget, bool? required, bool? showTitle, GSFieldStatusEnum? status, String? value, int? weight, RegExp? validateRegEx, int? maxLength, int? minLine, int? maxLine, String? hint}) : super(key: key) {
     model = GSTextModel(
       type: GSFieldTypeEnum.text,
       tag: tag,
@@ -374,25 +356,7 @@ class GSField extends StatefulWidget {
     );
   }
 
-  GSField.password(
-      {Key? key,
-      required String tag,
-      String? title,
-      String? errorMessage,
-      String? helpMessage,
-      Widget? prefixWidget,
-      bool? required,
-      bool? showTitle,
-      GSFieldStatusEnum? status,
-      String? value,
-      int? weight,
-      RegExp? validateReg,
-      int? maxLength,
-      int? minLine,
-      int? maxLine,
-      bool? isEnable,
-      String? hint})
-      : super(key: key) {
+  GSField.password({Key? key, required String tag, String? title, String? errorMessage, String? helpMessage, Widget? prefixWidget, bool? required, bool? showTitle, GSFieldStatusEnum? status, String? value, int? weight, RegExp? validateReg, int? maxLength, int? minLine, int? maxLine, bool? isEnable, String? hint}) : super(key: key) {
     model = GSPasswordModel(
       type: GSFieldTypeEnum.password,
       showTitle: showTitle ?? true,
@@ -410,44 +374,8 @@ class GSField extends StatefulWidget {
     );
   }
 
-  GSField.textPlain(
-      {Key? key,
-      required String tag,
-      String? title,
-      String? errorMessage,
-      String? helpMessage,
-      Widget? prefixWidget,
-      Widget? postfixWidget,
-      bool? required,
-      bool? showTitle,
-      GSFieldStatusEnum? status,
-      String? value,
-      int? weight,
-      RegExp? validateRegEx,
-      int? maxLength,
-      int? minLine,
-      int? maxLine,
-      String? hint,
-      bool? showCounter})
-      : super(key: key) {
-    model = GSTextPlainModel(
-        type: GSFieldTypeEnum.textPlain,
-        tag: tag,
-        title: title,
-        showTitle: showTitle ?? true,
-        errorMessage: errorMessage,
-        helpMessage: helpMessage,
-        prefixWidget: prefixWidget,
-        postfixWidget: postfixWidget,
-        required: required,
-        status: status,
-        value: value,
-        weight: weight,
-        hint: hint,
-        maxLine: maxLine,
-        minLine: minLine,
-        maxLength: maxLength,
-        showCounter: showCounter);
+  GSField.textPlain({Key? key, required String tag, String? title, String? errorMessage, String? helpMessage, Widget? prefixWidget, Widget? postfixWidget, bool? required, bool? showTitle, GSFieldStatusEnum? status, String? value, int? weight, RegExp? validateRegEx, int? maxLength, int? minLine, int? maxLine, String? hint, bool? showCounter}) : super(key: key) {
+    model = GSTextPlainModel(type: GSFieldTypeEnum.textPlain, tag: tag, title: title, showTitle: showTitle ?? true, errorMessage: errorMessage, helpMessage: helpMessage, prefixWidget: prefixWidget, postfixWidget: postfixWidget, required: required, status: status, value: value, weight: weight, hint: hint, maxLine: maxLine, minLine: minLine, maxLength: maxLength, showCounter: showCounter);
   }
 
   GSField.mobile({
@@ -729,24 +657,7 @@ class GSField extends StatefulWidget {
     );
   }
 
-  GSField.bankCard(
-      {Key? key,
-      required String tag,
-      String? title,
-      String? errorMessage,
-      String? helpMessage,
-      Widget? prefixWidget,
-      Widget? postfixWidget,
-      bool? required,
-      bool? showTitle,
-      GSFieldStatusEnum? status,
-      String? value,
-      int? weight,
-      RegExp? validateRegEx,
-      int? minLine,
-      int? maxLine,
-      String? hint})
-      : super(key: key) {
+  GSField.bankCard({Key? key, required String tag, String? title, String? errorMessage, String? helpMessage, Widget? prefixWidget, Widget? postfixWidget, bool? required, bool? showTitle, GSFieldStatusEnum? status, String? value, int? weight, RegExp? validateRegEx, int? minLine, int? maxLine, String? hint}) : super(key: key) {
     model = GSBankCardModel(
       type: GSFieldTypeEnum.bankCard,
       tag: tag,
@@ -859,29 +770,20 @@ class _GSFieldState extends State<GSField> {
                 ),
                 const SizedBox(height: 4.0),
                 Opacity(
-                  opacity: (widget.model.status == GSFieldStatusEnum.error && widget.model.errorMessage != null) ||
-                          widget.model.helpMessage != null
-                      ? 1
-                      : 0,
+                  opacity: (widget.model.status == GSFieldStatusEnum.error && widget.model.errorMessage != null) || widget.model.helpMessage != null ? 1 : 0,
                   child: Row(
                     children: [
                       SizedBox(
                         width: 8.0,
                         height: 8.0,
                         child: SvgPicture.asset(
-                          widget.model.status == GSFieldStatusEnum.error
-                              ? 'packages/gsform/assets/ic_alret.svg'
-                              : 'packages/gsform/assets/ic_info.svg',
+                          widget.model.status == GSFieldStatusEnum.error ? 'packages/gsform/assets/ic_alret.svg' : 'packages/gsform/assets/ic_info.svg',
                         ),
                       ),
                       const SizedBox(width: 1.0),
                       Text(
-                        widget.model.status == GSFieldStatusEnum.error
-                            ? widget.model.errorMessage ?? ''
-                            : widget.model.helpMessage ?? '',
-                        style: widget.model.status == GSFieldStatusEnum.error
-                            ? widget.formStyle!.errorTextStyle
-                            : widget.formStyle!.helpTextStyle,
+                        widget.model.status == GSFieldStatusEnum.error ? widget.model.errorMessage ?? '' : widget.model.helpMessage ?? '',
+                        style: widget.model.status == GSFieldStatusEnum.error ? widget.formStyle!.errorTextStyle : widget.formStyle!.helpTextStyle,
                       ),
                     ],
                   ),
@@ -942,9 +844,9 @@ class _GSFieldState extends State<GSField> {
       case GSFieldTypeEnum.imagePicker:
         widget.child = GSImagePickerField(widget.model as GSImagePickerModel, widget.formStyle!);
         break;
-      case GSFieldTypeEnum.qrScanner:
-        widget.child = GSQRScannerField(widget.model as GSQRScannerModel, widget.formStyle!);
-        break;
+      // case GSFieldTypeEnum.qrScanner:
+      //   widget.child = GSQRScannerField(widget.model as GSQRScannerModel, widget.formStyle!);
+      //   break;
       case GSFieldTypeEnum.multiImagePicker:
         widget.child = GSMultiImagePickerField(widget.model as GSMultiImagePickerModel, widget.formStyle!);
         break;

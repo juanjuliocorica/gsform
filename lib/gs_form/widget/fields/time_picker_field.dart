@@ -5,7 +5,6 @@ import 'package:gsform/gs_form/core/field_callback.dart';
 import 'package:gsform/gs_form/core/form_style.dart';
 import 'package:gsform/gs_form/model/data_model/time_data_model.dart';
 import 'package:gsform/gs_form/model/fields_model/time_picker_model.dart';
-import 'package:persian_datetime_picker/persian_datetime_picker.dart';
 
 class GSTimePickerField extends StatefulWidget implements GSFieldCallBack {
   late GSTimePickerModel model;
