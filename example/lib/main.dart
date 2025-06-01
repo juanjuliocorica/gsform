@@ -11,7 +11,7 @@ import 'package:gsform/gs_form/model/fields_model/image_picker_model.dart';
 import 'package:gsform/gs_form/widget/field.dart';
 import 'package:gsform/gs_form/widget/form.dart';
 import 'package:gsform/gs_form/widget/section.dart';
-import 'package:lottie/lottie.dart';
+// import 'package:lottie/lottie.dart';
 
 void main() {
   runApp(const MyApp());
@@ -292,22 +292,22 @@ class SingleSectionForm extends StatelessWidget {
                         maxLength: 150,
                         required: true,
                       ),
-                      GSField.imagePicker(
-                        tag: 'a',
-                        title: 'انتخاب تصویر',
-                        hint: 'فایل خود را انتخاب کنید',
-                        iconWidget: Lottie.asset(
-                          'assets/cam.json',
-                          width: 70,
-                          height: 70,
-                        ),
-                        maximumSizePerImageInBytes: 100,
-                        onErrorSizeItem: () {
-                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                            content: Text("maximum size exception"),
-                          ));
-                        },
-                      ),
+                      // GSField.imagePicker(
+                      //   tag: 'a',
+                      //   title: 'انتخاب تصویر',
+                      //   hint: 'فایل خود را انتخاب کنید',
+                      //   iconWidget: Lottie.asset(
+                      //     'assets/cam.json',
+                      //     width: 70,
+                      //     height: 70,
+                      //   ),
+                      //   maximumSizePerImageInBytes: 100,
+                      //   onErrorSizeItem: () {
+                      //     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                      //       content: Text("maximum size exception"),
+                      //     ));
+                      //   },
+                      // ),
                       GSField.multiImagePicker(
                         tag: 'multi',
                         required: true,

@@ -43,10 +43,7 @@ class GSTimePickerField extends StatefulWidget implements GSFieldCallBack {
   }
 
   _provideData(BuildContext context) {
-    return selectedTime == null
-        ? null
-        : TimeDataModel(
-            displayTime: selectedTime!.format(context), hour: selectedTime!.hour, minute: selectedTime!.minute);
+    return selectedTime == null ? null : TimeDataModel(displayTime: selectedTime!.format(context), hour: selectedTime!.hour, minute: selectedTime!.minute);
   }
 }
 
@@ -88,10 +85,10 @@ class _GSTimePickerFieldState extends State<GSTimePickerField> {
   }
 
   _openPersianTimePicker() async {
-    var picked = await showPersianTimePicker(
+    var picked = await showTimePicker(
       context: widget.context,
-      initialTime: widget.model.initialTime ?? TimeOfDay.now(),
-      initialEntryMode: PTimePickerEntryMode.dial,
+      initialTime: widget.selectedTime ?? TimeOfDay.now(),
+      initialEntryMode: TimePickerEntryMode.dial,
       useRootNavigator: false,
     );
     if (picked != null) {

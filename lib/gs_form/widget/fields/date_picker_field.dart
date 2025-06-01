@@ -139,7 +139,7 @@ class _GSDatePickerFieldState extends State<GSDatePickerField> {
     }
 
     if (widget.model.availableTo == null) {
-      widget.jalaliAvailableTo = Jalali.MAX;
+      widget.jalaliAvailableTo = Jalali.max;
     } else {
       widget.jalaliAvailableTo = Jalali(widget.model.availableTo!.year, widget.model.availableTo!.month, widget.model.availableTo!.day);
     }
@@ -164,7 +164,7 @@ class _GSDatePickerFieldState extends State<GSDatePickerField> {
       if (widget.model.availableFrom != null) {
         widget.jalaliAvailableFrom = Jalali(widget.model.availableFrom!.year, widget.model.availableFrom!.month, widget.model.availableFrom!.day);
       } else {
-        widget.jalaliAvailableFrom = Jalali.MIN;
+        widget.jalaliAvailableFrom = Jalali.min;
       }
     } else {
       widget.jalaliAvailableFrom = widget.jalaliInitialDate;
